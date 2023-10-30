@@ -22,7 +22,8 @@ app.use("/api", router);
 app.use(errorConverter);
 app.use(errorHandler);
 
+let port = process.env.port || 4000;
 // listen server
-app.listen(envConfig.port, () =>
+app.listen(port, () =>
   console.log(`Server is running on port ~ ${envConfig.port}`)
 );
