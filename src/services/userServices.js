@@ -13,8 +13,8 @@ import httpStatus from "http-status";
 import ApiError from "../utils/apiError.js";
 
 const rpName = "Jhala's First Webauthn";
-const rpID = "localhost";
-const origin = `http://${rpID}`;
+const rpID = "webauthn-server-dun.vercel.app";
+const origin = `https://${rpID}`;
 
 export const generateAuthOptions = async (user) => {
   const options = await generateAuthenticationOptions({
