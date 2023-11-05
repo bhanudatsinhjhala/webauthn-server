@@ -117,9 +117,12 @@ export const verifyAuthOptions = async (req, res, next) => {
       },
     ];
   }
+  const accessToken = jwt.sign({ id: user.id }, envConfig.jwtSecret);
+
   return res.status(httpStatus.OK).send({
     data: {
       verified: verification.verified,
+      accessToken,
     },
     message: "Verification of Authentication User done successfully",
   });
